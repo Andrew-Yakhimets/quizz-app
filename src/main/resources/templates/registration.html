@@ -19,12 +19,25 @@
 </form>
 -->
 
-<form th:method="POST" th:action="@{/}">
+<form th:method="POST" th:action="@{/registration}">
     <label> Enter username </label>
     <input type="text" name="name" size="15"/>
-    <br> <br><br>
+    <br>
 
-    <input type="submit" value="Submit"/>
+    <label> Enter your Email </label>
+    <input type="text" name="email" size="15"/>
+    <br>
+    <br>
+    <label> Enter your password </label>
+    <input type="password" name="password" size="15"/>
+    <br>
+    <br>
+    <label> Repeat your password </label>
+    <input type="password" name="repeatPassword" size="15"/>
+
+    <br><br>
+
+    <input type="submit" value="Register"/>
 </form>
 
 </body>
