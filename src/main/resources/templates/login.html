@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/login}">
+  <br> <br>
+  <label> Enter your Email </label>
+  <input type="text" name="email" size="15"/>
+  <br>
+  <br>
+  <label> Enter your password </label>
+  <input type="password" name="password" size="15"/>
+  <br><br>
+  <input type="submit" value="Login"/>
+  <button onclick="location.href='/registration'" type="button">I don't have an account</button>
+
+</form>
+
+<p th:text="${errorMessage}">VALUE</p>
+
+
+</body>
+</html>

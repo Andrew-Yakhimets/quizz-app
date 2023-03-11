@@ -2,11 +2,14 @@ package org.quiz.app.database;
 
 import org.quiz.app.entities.User;
 import org.quiz.app.exceptions.EntityNotFoundException;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
-public class UserRepository implements Repository<String, User> {
+@Repository
+public class UserRepository implements AbstractRepository<String, User> {
     private final Map<String, User> users = new HashMap<>();
 
     @Override
@@ -26,6 +29,12 @@ public class UserRepository implements Repository<String, User> {
     public boolean existByEmail(String email) {
         return users.values().stream()
                 .anyMatch(o -> o.getEmail().equals(email));
+    }
+
+    public Optional<User> findOptionalByEmailAndPassword(String email, String password) {
+        return users.values().stream()
+                .filter(o -> o.getEmail().equals(email) && o.getPassword().equals(password))
+                .findAny();
     }
 }
 

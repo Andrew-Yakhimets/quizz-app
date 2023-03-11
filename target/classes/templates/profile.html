@@ -5,10 +5,20 @@
     <title>Profile</title>
 </head>
 <body>
-Potato and molasses
-<br> <br>
+<!--<p th:text="Hello, ">VALUE</p>-->
 
-<p th:text="${user}">VALUE</p>
+<p th:text="${user.getName()}">VALUE</p>
+<br> <br>
+<form th:method="POST" th:action="@{/profile}">
+    <label>Change your username</label>
+    <input type="text" name="username" size="15"/>
+    <br> <br>
+    <input type="submit" value="Change username"/>
+
+
+</form>
+
+
 
 
 </body>

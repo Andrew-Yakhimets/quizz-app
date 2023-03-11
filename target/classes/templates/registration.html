@@ -8,24 +8,29 @@
 <body>
 <br>
 <br>
-<!--
 
-<form th:method="POST" th:action="@{/}" th:object="${user}">
-    <label> Enter username </label>
-    <input type="text" th:field="*{name}" name="username" size="15"/>
-    <br> <br><br>
-
-    <input type="submit" value="Submit"/>
-</form>
--->
-
-<form th:method="POST" th:action="@{/}">
+<form th:method="POST" th:action="@{/registration}">
     <label> Enter username </label>
     <input type="text" name="name" size="15"/>
-    <br> <br><br>
+    <br>
+    <br>
+    <label> Enter your Email </label>
+    <input type="text" name="email" size="15"/>
+    <br>
+    <br>
+    <label> Enter your password </label>
+    <input type="password" name="password" size="15"/>
+    <br>
+    <br>
+    <label> Repeat your password </label>
+    <input type="password" name="repeatPassword" size="15"/>
 
-    <input type="submit" value="Submit"/>
+    <br><br>
+
+    <input type="submit" value="Register"/>
+
+    <button onclick="location.href='/login'" type="button">I already have an account</button>
 </form>
-
+<p th:text="${errorMessage}">VALUE</p>
 </body>
 </html>
